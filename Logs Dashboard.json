@@ -1,0 +1,338 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 28,
+  "iteration": 1699525202844,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "alignNumbersToRightEnabled": false,
+      "columnAliases": [],
+      "columnFiltersEnabled": false,
+      "columnWidthHints": [
+        {
+          "$$hashKey": "object:4975",
+          "name": "Time",
+          "width": "100px"
+        }
+      ],
+      "columns": [],
+      "compactRowsEnabled": false,
+      "datasource": {
+        "type": "elasticsearch",
+        "uid": "eljPNQiIz"
+      },
+      "datatablePagingType": "simple_numbers",
+      "datatableTheme": "basic_theme",
+      "emptyData": false,
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 14,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "hoverEnabled": true,
+      "id": 3,
+      "infoEnabled": true,
+      "lengthChangeEnabled": true,
+      "orderColumnEnabled": true,
+      "pagingTypes": [
+        {
+          "$$hashKey": "object:1570",
+          "text": "Page number buttons only",
+          "value": "numbers"
+        },
+        {
+          "$$hashKey": "object:1571",
+          "text": "'Previous' and 'Next' buttons only",
+          "value": "simple"
+        },
+        {
+          "$$hashKey": "object:1572",
+          "text": "'Previous' and 'Next' buttons, plus page numbers",
+          "value": "simple_numbers"
+        },
+        {
+          "$$hashKey": "object:1573",
+          "text": "'First', 'Previous', 'Next' and 'Last' buttons",
+          "value": "full"
+        },
+        {
+          "$$hashKey": "object:1574",
+          "text": "'First', 'Previous', 'Next' and 'Last' buttons, plus page numbers",
+          "value": "full_numbers"
+        },
+        {
+          "$$hashKey": "object:1575",
+          "text": "'First' and 'Last' buttons, plus page numbers",
+          "value": "first_last_numbers"
+        }
+      ],
+      "panelHeight": 474,
+      "pluginVersion": "8.3.4",
+      "rowNumbersEnabled": false,
+      "rowsPerPage": 5,
+      "scroll": true,
+      "scrollHeight": "default",
+      "searchEnabled": true,
+      "searchHighlightingEnabled": true,
+      "showCellBorders": true,
+      "showHeader": true,
+      "showRowBorders": true,
+      "sort": {
+        "col": 0,
+        "desc": true
+      },
+      "sortByColumns": [
+        {
+          "$$hashKey": "object:61",
+          "columnData": 0,
+          "sortMethod": "desc"
+        }
+      ],
+      "sortByColumnsData": [
+        [
+          0,
+          "asc"
+        ]
+      ],
+      "stripedRowsEnabled": true,
+      "styles": [
+        {
+          "$$hashKey": "object:63",
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "pattern": "Time",
+          "type": "date"
+        }
+      ],
+      "targets": [
+        {
+          "alias": "",
+          "bucketAggs": [],
+          "datasource": {
+            "type": "elasticsearch",
+            "uid": "eljPNQiIz"
+          },
+          "metrics": [
+            {
+              "id": "1",
+              "settings": {
+                "limit": "500"
+              },
+              "type": "logs"
+            }
+          ],
+          "query": "\nkubernetes.namespace_name:$Customer +kubernetes.pod_name:$Pod +kubernetes.container_name:$Container\n",
+          "refId": "A",
+          "timeField": "kubernetestimestamp"
+        }
+      ],
+      "themeOptions": {
+        "dark": "./styles/dark.scss",
+        "light": "./styles/light.scss"
+      },
+      "themes": [
+        {
+          "$$hashKey": "object:1545",
+          "disabled": false,
+          "text": "Basic",
+          "value": "basic_theme"
+        },
+        {
+          "$$hashKey": "object:1546",
+          "disabled": true,
+          "text": "Bootstrap",
+          "value": "bootstrap_theme"
+        },
+        {
+          "$$hashKey": "object:1547",
+          "disabled": true,
+          "text": "Foundation",
+          "value": "foundation_theme"
+        },
+        {
+          "$$hashKey": "object:1548",
+          "disabled": true,
+          "text": "ThemeRoller",
+          "value": "themeroller_theme"
+        }
+      ],
+      "title": "Fitered Logs",
+      "transform": "table",
+      "transformations": [
+        {
+          "id": "organize",
+          "options": {
+            "excludeByName": {
+              "_id": true,
+              "_index": true,
+              "_source": true,
+              "_type": true,
+              "docker.container_id": true,
+              "highlight": true,
+              "kubernetes.container_image": true,
+              "kubernetes.container_image_id": true,
+              "kubernetes.container_name": true,
+              "kubernetes.host": true,
+              "kubernetes.labels.app": true,
+              "kubernetes.labels.appID": true,
+              "kubernetes.labels.name": true,
+              "kubernetes.labels.pod-template-hash": true,
+              "kubernetes.master_url": true,
+              "kubernetes.namespace_id": true,
+              "kubernetes.namespace_labels.kubernetes_io/metadata_name": true,
+              "kubernetes.namespace_labels.name": true,
+              "kubernetes.namespace_name": true,
+              "kubernetes.pod_id": true,
+              "kubernetes.pod_name": true,
+              "sort": true,
+              "tag": true
+            },
+            "indexByName": {
+              "_id": 3,
+              "_index": 4,
+              "_source": 2,
+              "_type": 5,
+              "docker.container_id": 6,
+              "highlight": 7,
+              "kubernetes.container_image": 8,
+              "kubernetes.container_image_id": 9,
+              "kubernetes.container_name": 10,
+              "kubernetes.host": 11,
+              "kubernetes.labels.name": 12,
+              "kubernetes.master_url": 13,
+              "kubernetes.namespace_id": 14,
+              "kubernetes.namespace_labels.kubernetes_io/metadata_name": 15,
+              "kubernetes.namespace_labels.name": 16,
+              "kubernetes.namespace_name": 1,
+              "kubernetes.pod_id": 17,
+              "kubernetes.pod_name": 18,
+              "kubernetestimestamp": 0,
+              "message": 19,
+              "sort": 20,
+              "tag": 21
+            },
+            "renameByName": {
+              "kubernetes.container_name": "Container",
+              "kubernetes.labels.name": "Pod",
+              "kubernetes.namespace_name": "Namespace",
+              "kubernetes.pod_name": "Pod",
+              "kubernetestimestamp": "Time",
+              "message": "Message"
+            }
+          }
+        }
+      ],
+      "type": "briangann-datatable-panel"
+    }
+  ],
+  "schemaVersion": 34,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": false,
+          "text": "123dentist",
+          "value": "123dentist"
+        },
+        "definition": "label_values(namespace)",
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "Namespace",
+        "options": [],
+        "query": {
+          "query": "label_values(namespace)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "All",
+          "value": "$__all"
+        },
+        "definition": "label_values(container_memory_usage_bytes{namespace=~\"$Namespace$\"}, pod)",
+        "hide": 0,
+        "includeAll": true,
+        "multi": true,
+        "name": "Pod",
+        "options": [],
+        "query": {
+          "query": "label_values(container_memory_usage_bytes{namespace=~\"$Namespace$\"}, pod)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "definition": "label_values(kube_pod_container_info{pod=~\"$Pod$\",namespace=~\"$Namespace$\"}, container)",
+        "hide": 0,
+        "includeAll": true,
+        "multi": true,
+        "name": "Container",
+        "options": [],
+        "query": {
+          "query": "label_values(kube_pod_container_info{pod=~\"$Pod$\",namespace=~\"$Namespace$\"}, container)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-15m",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Logs Dashboard",
+  "uid": "P-mUk_mIk",
+  "version": 15,
+  "weekStart": ""
+}
